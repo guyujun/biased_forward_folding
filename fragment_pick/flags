@@ -1,0 +1,26 @@
+# Input databases
+-in::file::vall /usr/local/rosetta_src_2020.11.61179_bundle/main/database/sampling/filtered.vall.dat.2006-05-05.gz
+
+# Query-related input files
+-in::file::fasta		2jsvX.fasta
+-in::file::s        2jsvX.pdb
+-frags::ss_pred			2jsvX.psipred.ss2 predA
+
+# Weights file
+-frags::scoring::config		simple.wghts
+
+# What should we do?
+-frags::bounded_protocol	
+
+# three-mers only, please
+-frags::frag_sizes 		9
+-frags::n_candidates		200
+-frags::n_frags			200
+
+-frags::frag_sizes 		3
+-frags::n_candidates		200
+-frags::n_frags			200
+
+# Output 
+-out::file::frag_prefix		frags
+-frags::describe_fragments frags.fsc
